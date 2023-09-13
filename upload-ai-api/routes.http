@@ -24,3 +24,15 @@ Content-Type: application/json
 {
   "prompt": "heroi"
 }
+
+###
+
+# @name generate-ai-completion
+POST http://localhost:3333/ai/complete
+Content-Type: application/json
+
+{
+  "videoId": "edab054b-3585-4c2e-9251-18d3bf1d6588",
+  "temperature": 0.5,
+  "template": "Gere um resumo sucinto da transcrição do video informada a seguir: '''{transcription}'''"
+}
