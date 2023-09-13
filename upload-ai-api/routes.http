@@ -4,5 +4,23 @@ GET http://localhost:3333/prompts
 
 ###
 
-# @name list-prompts
-GET http://localhost:3333/prompts
+# @name upload
+POST http://localhost:3333/videos
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="file"; filename="smzinho-meu-heroi-nao-usa-capa.mp3"
+Content-Type: audio/mpeg
+
+< ./smzinho-meu-heroi-nao-usa-capa.mp3
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
+
+###
+
+# @name create-transcription
+POST http://localhost:3333/videos/edab054b-3585-4c2e-9251-18d3bf1d6588/transcription
+Content-Type: application/json
+
+{
+  "prompt": "heroi"
+}
